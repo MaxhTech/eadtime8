@@ -8,8 +8,8 @@ public final class ConexaoBD {
 
     public static Connection getConexao() throws DadosException {
         try {
-            Class.forName("<driver>");
-            return DriverManager.getConnection("jdbc:<tipo>:<url>", "usuario", "senha");
+            Class.forName("org.postgresql.Driver");
+            return DriverManager.getConnection("jdbc:postgresql://localhost/pi2", "pi2", "postgres");
         } catch (ClassNotFoundException e) {
             throw new DadosException("Erro ao carregar JDBC: " + e.getMessage());
         } catch (SQLException e) {
