@@ -13,3 +13,10 @@ CREATE TABLE assunto (
     str_assunto VARCHAR(30) NOT NULL,
     ativo BOOLEAN NOT NULL
 );
+
+CREATE TABLE unidade (
+    id SERIAL PRIMARY KEY,
+    str_nome_unidade VARCHAR(100) NOT NULL,
+    str_sigla_unidade VARCHAR(10) NOT NULL,
+    ativa BOOLEAN NOT NULL
+);

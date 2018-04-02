@@ -3,6 +3,8 @@ package br.iesb.meuprograma.apresentacao;
 
 import br.iesb.meuprograma.apresentacao.assunto.JDialogAssunto;
 import br.iesb.meuprograma.apresentacao.assunto.JPanelAssunto;
+import br.iesb.meuprograma.apresentacao.unidade.JDialogUnidade;
+import br.iesb.meuprograma.apresentacao.unidade.JPanelUnidade;
 import javax.swing.ViewportLayout;
 
 public class JFramePrincipal extends javax.swing.JFrame {
@@ -27,9 +29,11 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jMenuBarPrincipal = new javax.swing.JMenuBar();
         jMenuSistema = new javax.swing.JMenu();
         sistemaAssuntos = new javax.swing.JMenuItem();
+        sistemaUnidades = new javax.swing.JCheckBoxMenuItem();
         jMenuItemSair = new javax.swing.JMenuItem();
         jMenuCadastro = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        cadastroUnidades = new javax.swing.JMenuItem();
         cadastroAssuntos = new javax.swing.JMenuItem();
         jMenuAjuda = new javax.swing.JMenu();
         jMenuItemSobre = new javax.swing.JMenuItem();
@@ -62,6 +66,15 @@ public class JFramePrincipal extends javax.swing.JFrame {
         });
         jMenuSistema.add(sistemaAssuntos);
 
+        sistemaUnidades.setSelected(true);
+        sistemaUnidades.setText("Unidade");
+        sistemaUnidades.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sistemaUnidadesActionPerformed(evt);
+            }
+        });
+        jMenuSistema.add(sistemaUnidades);
+
         jMenuItemSair.setMnemonic('r');
         jMenuItemSair.setText("Sair");
         jMenuItemSair.addActionListener(new java.awt.event.ActionListener() {
@@ -83,6 +96,14 @@ public class JFramePrincipal extends javax.swing.JFrame {
             }
         });
         jMenuCadastro.add(jMenuItem1);
+
+        cadastroUnidades.setText("Unidades");
+        cadastroUnidades.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastroUnidadesActionPerformed(evt);
+            }
+        });
+        jMenuCadastro.add(cadastroUnidades);
 
         cadastroAssuntos.setText("Assuntos");
         cadastroAssuntos.addActionListener(new java.awt.event.ActionListener() {
@@ -149,6 +170,18 @@ public class JFramePrincipal extends javax.swing.JFrame {
         this.setNewPanel(panelAssunto);
     }//GEN-LAST:event_sistemaAssuntosActionPerformed
 
+    private void sistemaUnidadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sistemaUnidadesActionPerformed
+        // TODO add your handling code here:
+        JPanelUnidade panelUnidade = new JPanelUnidade();
+        panelUnidade.setVisible(true);
+    }//GEN-LAST:event_sistemaUnidadesActionPerformed
+
+    private void cadastroUnidadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroUnidadesActionPerformed
+        // TODO add your handling code here:
+        JDialogUnidade unidadeDialog = new JDialogUnidade(new javax.swing.JFrame(), true);
+        unidadeDialog.setVisible(true);
+    }//GEN-LAST:event_cadastroUnidadesActionPerformed
+
     private void setNewPanel(javax.swing.JPanel panel) {
         this.mainPanel.setLayout(new java.awt.BorderLayout());
         this.mainPanel.add(panel);
@@ -158,6 +191,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem cadastroAssuntos;
+    private javax.swing.JMenuItem cadastroUnidades;
     private javax.swing.JMenu jMenuAjuda;
     private javax.swing.JMenuBar jMenuBarPrincipal;
     private javax.swing.JMenu jMenuCadastro;
@@ -167,5 +201,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuSistema;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JMenuItem sistemaAssuntos;
+    private javax.swing.JCheckBoxMenuItem sistemaUnidades;
     // End of variables declaration//GEN-END:variables
 }
